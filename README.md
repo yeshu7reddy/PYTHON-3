@@ -22,7 +22,7 @@ game={'t1' : ' ','t2' : ' ', 't3': ' ',
        'l1' : ' ','l2' : ' ','l3' : ' '
 
     }
-# the g.i is set
+
 
 player=1
 tmoves=0
