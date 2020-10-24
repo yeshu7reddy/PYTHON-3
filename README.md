@@ -1,8 +1,8 @@
 # python 
 
-##TIC-TAC-TOE
+##tic tac toe
 
-print("                                                 Welcome    machas     ")
+print("                                                 Welcome    machas   everyone play the game  ")
 
 print("             ")
 print(" t1   t2  t3 ")
