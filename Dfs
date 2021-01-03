@@ -1,0 +1,26 @@
+from collections import defaultdict
+
+v,e=map(int,input().split())  # no.of vertices and no.of edge
+graph=defaultdict(list)
+for i in range(e):
+    u,v=map(str,input().split())    #appending the neighbours
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+
+visited=defaultdict(bool)
+path=[]
+def dfs(graph,visited,start,path): # start is the point where u want to start traversal
+    path.append(start)
+    visited[start]=True
+    for neighbours in graph[start]:
+        if visited[neighbours]==False:
+            dfs(graph,visited,neighbours,path)  #recursive
+    return path                 #after the completion of recursion it will return path
+print(*dfs(graph,visited,"1",path))
+
+
+
+
+
+
