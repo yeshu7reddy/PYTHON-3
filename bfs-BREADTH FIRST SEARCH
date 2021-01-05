@@ -1,0 +1,29 @@
+from collections import defaultdict
+from collections import deque
+
+def bfs(graph,start,path,visited):
+    path.append(start)
+    queue=deque()
+    queue.append(start)
+    visited[start]=True
+    while len(queue)!=0:
+        temp=queue.popleft()
+        for j in graph[temp]:
+            if visited[j]==False:
+                path.append(j)
+                queue.append(j)
+                visited[j]=True
+
+    return path
+
+
+graph=defaultdict(list)
+visited=defaultdict(bool)
+v,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+start ="1"
+path=[]
+print("-->".join(bfs(graph,start,path,visited)))
